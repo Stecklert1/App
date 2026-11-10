@@ -904,10 +904,14 @@ feature_importances = pd.Series(importances, index=X_rf.columns).sort_values(asc
 print("\nTop 10 Most Important Features:")
 print(feature_importances.head(10))
 
+import sys
+import subprocess
+
 try:
     import category_encoders as ce
 except ImportError:
-    !pip install category_encoders -q
+    # Safe standard library package installation in standard python runtimes
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "category_encoders", "-q"])
     import category_encoders as ce
 
 # Make a copy of the dataframe
@@ -1352,7 +1356,6 @@ print("="*60)
 # import streamlit as st
 # import pandas as pd
 # import numpy as np
-# import joblib
 # import statsmodels.api as sm
 # 
 # # Set page config
@@ -1452,7 +1455,6 @@ print("="*60)
 #     metric_col1.metric("Est. Annual Base Salary", f"${predicted_base_salary:,.2f}")
 #     metric_col2.metric("Est. Overtime Pay", f"${predicted_overtime:,.2f}")
 #     metric_col3.metric("Est. Total Compensation", f"${predicted_total_compensation:,.2f}")
-#
 
 # Install streamlit and localtunnel to tunnel the local port
 !pip install streamlit -q
