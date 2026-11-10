@@ -1449,16 +1449,12 @@ print("="*60)
 #     predicted_total_compensation = predicted_base_salary + predicted_overtime + (predicted_base_salary * 0.03)
 # 
 #     # Display Results
-#     st.success("🎉 Predictions Calculated!")
+#     st.success("  Predictions Calculated!")
 # 
 #     metric_col1, metric_col2, metric_col3 = st.columns(3)
 #     metric_col1.metric("Est. Annual Base Salary", f"${predicted_base_salary:,.2f}")
 #     metric_col2.metric("Est. Overtime Pay", f"${predicted_overtime:,.2f}")
 #     metric_col3.metric("Est. Total Compensation", f"${predicted_total_compensation:,.2f}")
-
-# Install streamlit and localtunnel to tunnel the local port
-!pip install streamlit -q
-!npm install -g localtunnel -q
 
 """### Run and Access your Streamlit App
 Execute the cell below. It will output an external IP address and a link. Copy the IP address, click the link, paste the IP address into the LocalTunnel bypass check page, and your Streamlit app will load!
